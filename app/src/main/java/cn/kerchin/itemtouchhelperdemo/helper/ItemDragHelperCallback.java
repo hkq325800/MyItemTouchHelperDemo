@@ -1,4 +1,4 @@
-package me.yokeyword.itemtouchhelperdemo.helper;
+package cn.kerchin.itemtouchhelperdemo.helper;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;

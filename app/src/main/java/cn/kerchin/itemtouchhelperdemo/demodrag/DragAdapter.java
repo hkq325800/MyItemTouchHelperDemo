@@ -1,4 +1,4 @@
-package me.yokeyword.itemtouchhelperdemo.demodrag;
+package cn.kerchin.itemtouchhelperdemo.demodrag;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,9 +10,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import me.yokeyword.itemtouchhelperdemo.R;
-import me.yokeyword.itemtouchhelperdemo.helper.OnDragVHListener;
-import me.yokeyword.itemtouchhelperdemo.helper.OnItemMoveListener;
+import cn.kerchin.itemtouchhelperdemo.R;
+import cn.kerchin.itemtouchhelperdemo.helper.OnDragVHListener;
+import cn.kerchin.itemtouchhelperdemo.helper.OnItemMoveListener;
 
 /**
  * 仅拖拽排序

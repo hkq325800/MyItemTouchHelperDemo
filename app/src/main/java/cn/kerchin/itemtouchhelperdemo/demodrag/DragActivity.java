@@ -1,4 +1,4 @@
-package me.yokeyword.itemtouchhelperdemo.demodrag;
+package cn.kerchin.itemtouchhelperdemo.demodrag;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +9,8 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.yokeyword.itemtouchhelperdemo.R;
-import me.yokeyword.itemtouchhelperdemo.helper.ItemDragHelperCallback;
+import cn.kerchin.itemtouchhelperdemo.R;
+import cn.kerchin.itemtouchhelperdemo.helper.ItemDragHelperCallback;
 
 /**
  * 拖拽

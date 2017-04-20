@@ -1,4 +1,4 @@
-package me.yokeyword.itemtouchhelperdemo.helper;
+package cn.kerchin.itemtouchhelperdemo.helper;
 
 /**
  * Item移动后 触发

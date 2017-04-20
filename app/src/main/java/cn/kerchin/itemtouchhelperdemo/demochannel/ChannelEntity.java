@@ -1,4 +1,4 @@
-package me.yokeyword.itemtouchhelperdemo.demochannel;
+package cn.kerchin.itemtouchhelperdemo.demochannel;
 
 /**
  * 频道实体类

@@ -1,4 +1,4 @@
-package me.yokeyword.itemtouchhelperdemo.demochannel;
+package cn.kerchin.itemtouchhelperdemo.demochannel;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -20,9 +20,9 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import me.yokeyword.itemtouchhelperdemo.R;
-import me.yokeyword.itemtouchhelperdemo.helper.OnDragVHListener;
-import me.yokeyword.itemtouchhelperdemo.helper.OnItemMoveListener;
+import cn.kerchin.itemtouchhelperdemo.R;
+import cn.kerchin.itemtouchhelperdemo.helper.OnDragVHListener;
+import cn.kerchin.itemtouchhelperdemo.helper.OnItemMoveListener;
 
 /**
  * 拖拽排序 + 增删
@@ -124,6 +124,10 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                             // 如果targetView不在屏幕内,则indexOfChild为-1  此时不需要添加动画,因为此时notifyItemMoved自带一个向目标移动的动画
                             // 如果在屏幕内,则添加一个位移动画
                             if (recyclerView.indexOfChild(targetView) >= 0) {
+                                if (mMyChannelItems.size() == 1) {
+                                    Toast.makeText(mContext, "至少要添加一个模块", Toast.LENGTH_SHORT).show();
+                                    return;
+                                }//确保提交时至少有一个模块
                                 int targetX, targetY;
 
                                 RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
@@ -204,6 +208,24 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             case TYPE_OTHER:
                 view = mInflater.inflate(R.layout.item_other, parent, false);
                 final OtherViewHolder otherHolder = new OtherViewHolder(view);
+                otherHolder.textView.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(final View v) {
+                        if (!isEditMode) {//setOnLongClickListener
+                            RecyclerView recyclerView = ((RecyclerView) parent);
+                            startEditMode(recyclerView);
+
+                            // header 按钮文字 改成 "完成"
+                            View view = recyclerView.getChildAt(0);
+                            if (view == recyclerView.getLayoutManager().findViewByPosition(0)) {
+                                TextView tvBtnEdit = (TextView) view.findViewById(R.id.tv_btn_edit);
+                                tvBtnEdit.setText(R.string.finish);
+                            }
+                        }
+
+                        return true;
+                    }
+                });
                 otherHolder.textView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

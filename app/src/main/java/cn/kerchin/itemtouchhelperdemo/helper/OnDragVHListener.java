@@ -1,4 +1,4 @@
-package me.yokeyword.itemtouchhelperdemo.helper;
+package cn.kerchin.itemtouchhelperdemo.helper;
 
 /**
  * ViewHolder 被选中 以及 拖拽释放 触发监听器

@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">ItemTouchHelperDemo</string>
-    <string name="tip_drag">长按编辑,拖拽排序,点击移除</string>
+    <string name="app_name">MyItemTouchHelperDemo</string>
+    <string name="tip_drag">长按编辑,拖拽排序,点击移动</string>
     <string name="my_cahnnel">已添加模块</string>
     <string name="other_channel">未添加模块</string>
     <string name="edit">编辑</string>

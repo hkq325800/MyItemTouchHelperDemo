@@ -1,4 +1,4 @@
-package me.yokeyword.itemtouchhelperdemo.demochannel;
+package cn.kerchin.itemtouchhelperdemo.demochannel;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,8 +11,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.yokeyword.itemtouchhelperdemo.R;
-import me.yokeyword.itemtouchhelperdemo.helper.ItemDragHelperCallback;
+import cn.kerchin.itemtouchhelperdemo.R;
+import cn.kerchin.itemtouchhelperdemo.helper.ItemDragHelperCallback;
 
 /**
  * 频道 增删改查 排序
