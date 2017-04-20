@@ -64,8 +64,11 @@ public class ChannelActivity extends AppCompatActivity {
 
         adapter.setOnMyChannelItemClickListener(new ChannelAdapter.OnMyChannelItemClickListener() {
             @Override
-            public void onItemClick(View v, int position) {
-                Toast.makeText(ChannelActivity.this, items.get(position).getName(), Toast.LENGTH_SHORT).show();
+            public void onItemClick(View v, int position, int viewType) {
+                if (viewType == ChannelAdapter.TYPE_MY)
+                    Toast.makeText(ChannelActivity.this, items.get(position).getName(), Toast.LENGTH_SHORT).show();
+                else if (viewType == ChannelAdapter.TYPE_OTHER)
+                    Toast.makeText(ChannelActivity.this, otherItems.get(position).getName(), Toast.LENGTH_SHORT).show();
             }
         });
     }

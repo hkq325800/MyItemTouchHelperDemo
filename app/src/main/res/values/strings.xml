@@ -3,6 +3,6 @@
     <string name="tip_drag">长按编辑,拖拽排序,点击移除</string>
     <string name="my_cahnnel">已添加模块</string>
     <string name="other_channel">未添加模块</string>
-    <string name="edit">排序</string>
+    <string name="edit">编辑</string>
     <string name="finish">提交</string>
 </resources>
