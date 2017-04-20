@@ -35,8 +35,9 @@
             android:id="@+id/img_edit"
             android:layout_width="16dp"
             android:layout_height="16dp"
+            android:background="@mipmap/ic_plus"
             android:layout_marginRight="10dp"
-            android:visibility="invisible" />
+            android:visibility="invisible"/>
 
     </LinearLayout>
 

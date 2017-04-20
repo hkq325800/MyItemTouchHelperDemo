@@ -112,8 +112,7 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             case TYPE_MY:
                 view = mInflater.inflate(R.layout.item_my, parent, false);
                 final MyViewHolder myHolder = new MyViewHolder(view);
-
-                myHolder.textView.setOnClickListener(new View.OnClickListener() {
+                View.OnClickListener click = new View.OnClickListener() {
                     @Override
                     public void onClick(final View v) {
                         int position = myHolder.getAdapterPosition();
@@ -153,9 +152,10 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                             mChannelItemClickListener.onItemClick(v, position - COUNT_PRE_MY_HEADER, viewType);
                         }
                     }
-                });
+                };
+                myHolder.textView.setOnClickListener(click);
 
-                myHolder.textView.setOnLongClickListener(new View.OnLongClickListener() {
+                View.OnLongClickListener longClick = new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(final View v) {
                         if (!isEditMode) {//setOnLongClickListener
@@ -173,9 +173,11 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                         mItemTouchHelper.startDrag(myHolder);
                         return true;
                     }
-                });
+                };
+                myHolder.textView.setOnLongClickListener(longClick);
+                myHolder.imgEdit.setOnLongClickListener(longClick);
 
-                myHolder.textView.setOnTouchListener(new View.OnTouchListener() {
+                View.OnTouchListener touch = new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (isEditMode) {//setOnTouchListener
@@ -197,7 +199,9 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                         }
                         return false;
                     }
-                });
+                };
+                myHolder.textView.setOnTouchListener(touch);
+                myHolder.imgEdit.setOnTouchListener(touch);
                 return myHolder;
 
             case TYPE_OTHER_CHANNEL_HEADER:
@@ -208,7 +212,7 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             case TYPE_OTHER:
                 view = mInflater.inflate(R.layout.item_other, parent, false);
                 final OtherViewHolder otherHolder = new OtherViewHolder(view);
-                otherHolder.textView.setOnLongClickListener(new View.OnLongClickListener() {
+                View.OnLongClickListener longC = new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(final View v) {
                         if (!isEditMode) {//setOnLongClickListener
@@ -225,8 +229,10 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
                         return true;
                     }
-                });
-                otherHolder.textView.setOnClickListener(new View.OnClickListener() {
+                };
+                otherHolder.textView.setOnLongClickListener(longC);
+
+                View.OnClickListener clickL = new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         int position = otherHolder.getAdapterPosition();
@@ -302,7 +308,9 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                             mChannelItemClickListener.onItemClick(v, position - mMyChannelItems.size() - 2, viewType);
                         }
                     }
-                });
+                };
+                otherHolder.textView.setOnClickListener(clickL);
+                otherHolder.editImg.setOnClickListener(clickL);
                 return otherHolder;
         }
         return null;
@@ -568,10 +576,12 @@ public class ChannelAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
      */
     class OtherViewHolder extends RecyclerView.ViewHolder {
         private TextView textView;
+        private ImageView editImg;
 
         public OtherViewHolder(View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.tv);
+            editImg = (ImageView) itemView.findViewById(R.id.img_edit);
         }
     }
 
