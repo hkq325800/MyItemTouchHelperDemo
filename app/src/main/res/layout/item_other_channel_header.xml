@@ -13,6 +13,7 @@
         android:textSize="16sp" />
 
     <TextView
+        android:id="@+id/tv_not_added_tip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/tv_not_added"
@@ -22,6 +23,20 @@
         android:text="长按编辑,点击移动"
         android:textColor="@color/tip"
         android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_next"
+        android:layout_width="56dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@id/tv_not_added_tip"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/bg_btn"
+        android:gravity="center"
+        android:onClick="next"
+        android:text="next"
+        android:textColor="@color/red_500" />
 
     <View
         android:layout_width="match_parent"
